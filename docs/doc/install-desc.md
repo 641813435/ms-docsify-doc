@@ -116,6 +116,7 @@
 ![markdown](../img/elk01.jpg "markdown")  
 
 > 步骤二： 进入解压的中间件logstash-6.8.2\config目录，进入logstach-cloud.conf修改日志输出路径
+
 ![markdown](../img/elk05.jpg "markdown") 
 
 > 步骤三： 进入解压的中间件logstash-6.8.2\bin目录，打开CMD窗口，执行命令`.\logstash -f ..\config\logstach-cloud.conf`
