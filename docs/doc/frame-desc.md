@@ -84,6 +84,9 @@
 
 
 ## 平台架构
+### 平台接口调用内部时序图
+![markdown](../img/deploy01.png "markdown") 
+
 !> **任务提示** 此处两张架构图需要调整。
 
 ![markdown](../部署01.jpg "markdown")  
