@@ -13,13 +13,13 @@
 平台是基于行业内最成熟主流的SpringCloud实现微服务的架构、整合了所有分布式系统常见的解决方案来解决
 分布式环境存在的痛点。具有稳定、高效、扩展性强、体系完整、社区活跃等众多优势。 
 
-![markdown](../微服务管理平台V2.0.png "markdown")
+![markdown](../微服务管理平台V2.1.png "markdown")
 ## 平台组成  
-<h4>通用模块--common</h4>
+<h4>通用模块--unity-common</h4>
 一些工具类,通用配置
 
 
-<h4>认证中心模块--authentication</h4>
+<h4>认证中心模块--unity-authentication</h4>
 
 - 用户登录检查与用户权限检查的自定义注解（非单点登录）  
 - 本地直接登录 使用shiro+jwt生成token认证授权（非单点登录）   
@@ -27,40 +27,40 @@
 - 单点登录，属于方式一增强版，登录后由sso返回登录信息（非单点登录）  
 
 
-<h4>通用接口层--interface</h4>
+<h4>通用接口层--unity-interface</h4>
 远程调用公用接口层
 
 
-<h4>网关服务--gateway</h4>
+<h4>网关服务--unity-gateway</h4>
 客户端请求网关,gateway通过nacos服务发现转发到指定服务的指定端点
 
 
-<h4>监控中心服务--monitor</h4>
+<h4>监控中心服务--unity-monitor</h4>
 整合springboot-admin,实现对springboot-actuator的可视化
 
 
-<h4>流程管理中心--process-center</h4>
+<h4>流程管理中心--unity-process</h4>
 提供在线流程编辑,统一流程管理、流程干预等
 
 
-<h4>统一认证服务端--sso-cas</h4>
+<h4>统一认证服务端--unity-sso-cas</h4>
 统一认证处理的服务端
 
 
-<h4>SOA模块--soa-center</h4>
+<h4>SOA模块--unity-soa</h4>
 针对WebService服务的两种发布调用方式
 
 
-<h4>大数据存储分析模块--bigdata-hbase</h4>
+<h4>大数据存储分析模块--unity-bigdata</h4>
 处理百万级数据库mysql无法高效处理的数据，
 可以用来做日志存储，对象存储，海量监控信息存储分析
 
 
-<h4>用户中心服务--user-center</h4>
+<h4>系统模块--unity-system</h4>
 数据库包括一张用户表,四张seata分布式事务基础表
 
 
-<h4>内容中心服务--content-center</h4>
+<h4>内容中心模块--unity-content</h4>
 数据库包括一张通知表,四张seata分布式事务基础表
 
 
@@ -112,7 +112,7 @@
 - logstash-6.8.2-日志收发
 - kibana-6.8.2-日志分析可视化处理
 - sentinel-1.6.2-服务熔断降级
-- seata-0.9.0-alibaba无侵入分布式事务框架，支持回滚
+- seata-1.0.0-alibaba无侵入分布式事务框架，支持回滚
 - mysql-5.6-百万级数据存储，关系型数据库
 - redis-3.2-轻量级缓存服务器，非关系型数据库
 - hbase-2.1.5-百亿级数据存储，非关系型数据库
