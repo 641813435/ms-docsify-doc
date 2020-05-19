@@ -42,6 +42,13 @@
   - [分布式事务配置](doc/develop-desc.md?id=分布式事务配置)
   - [多租户配置](doc/develop-desc.md?id=多租户配置)
   - [单点登录服务配置](doc/develop-desc.md?id=单点登录服务配置)
+- [案例参考](doc/example-desc.md)
+  - [接口清单](doc/example-desc.md?id=接口清单)
+  - [jwt登录](doc/example-desc.md?id=jwt登录)
+  - [熔断降级样例](doc/example-desc.md?id=熔断降级样例)
+  - [远程调用样例](doc/example-desc.md?id=远程调用样例)
+  - [分布式事务样例](doc/example-desc.md?id=分布式事务样例)
+  - [读取配置中心样例](doc/example-desc.md?id=读取配置中心样例)
 - [FAQ](doc/faq-desc.md)
 
 ##  解决问题的途径

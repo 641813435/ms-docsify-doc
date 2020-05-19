@@ -3,6 +3,7 @@
   * [框架简介](doc/frame-desc.md)
   * [框架安装指南](doc/install-desc)
   * [快速开发指南](/doc/develop-desc.md)
+  * [案例参考](/doc/example-desc.md)
   * [FAQ](doc/faq-desc.md)
 
 * 文档

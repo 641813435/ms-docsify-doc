@@ -170,7 +170,7 @@ public class NoticeFeignClientFallback implements FallbackFactory<NoticeFeignCli
 ![markdown](../img/example06.png "markdown") 
 
 > 分布式事务核心配置如下,需要使用分布式事务的服务都需要在nacos中增加如下配置
->
+
 ![markdown](../img/example07.png "markdown") 
 
 > 分布式事务核心代码如下，调用方service层上声明seata的全局事务注解，可以不写spring的事务注解
