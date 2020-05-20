@@ -11,6 +11,7 @@
 - [分布式事务配置](#分布式事务配置)
 - [多租户配置](#多租户配置)
 - [单点登录服务配置](#单点登录服务配置)
+- [easycode代码生成](#easycode代码生成)
 
 
 ##  开发环境说明
@@ -43,7 +44,7 @@
 | zookeeper | /   |
 | hbase | /   |
 | phoenix | /   |
-| 用户中心模块 | http://127.0.0.1:8090/cloud-user |
+| 用户中心模块 | http://127.0.0.1:8090/cloud-system |
 | 内容中心模块 | http://127.0.0.1:8090/cloud-content |
 | BPM流程中心模块 | http://127.0.0.1:8090/cloud-process |
 | 大数据模块 | http://127.0.0.1:8090/cloud-bigdata |
@@ -55,12 +56,12 @@
 > 步骤一： 以user-center为例，将需要操作的单表通过代码生成插件对我们预先定义的增删改查模板进行代码生成，
 > 生成之后我们就可以通过客户端来调用此服务中的接口了，Controller层代码如下
 ```java
-package com.zzqx.springcloud.usercenter.Controller;
+package com.zzqx.springcloud.system.Controller;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.zzqx.springcloud.common.util.ResponseInfo;
-import com.zzqx.springcloud.usercenter.domain.model.TestTable;
-import com.zzqx.springcloud.usercenter.service.TestTableService;
+import com.zzqx.springcloud.system.domain.model.TestTable;
+import com.zzqx.springcloud.system.service.TestTableService;
 import org.springframework.web.bind.annotation.*;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,11 +150,11 @@ public class TestTableController {
 > 这里给出一个feign配置的demo代码
 
 ```java
-package com.zzqx.springcloud.usercenter.feignclient.api.contentcenter;
+package com.zzqx.springcloud.system.feignclient.api.contentcenter;
 
 import com.zzqx.springcloud.facade.contentcenter.api.NoticeApi;
 import com.zzqx.springcloud.facade.contentcenter.model.BaseNotice;
-import com.zzqx.springcloud.usercenter.feignclient.fallback.NoticeFeignClientFallback;
+import com.zzqx.springcloud.system.feignclient.fallback.NoticeFeignClientFallback;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.cloud.openfeign.SpringQueryMap;
 import org.springframework.web.bind.annotation.*;
@@ -874,11 +875,43 @@ public class DsCommonProcessor extends DsProcessor {
 ```yaml
 #cas配置
 cas:
-  client-name: cloud-user
+  client-name: cloud-system
   server:
     url: http://127.0.0.1:8050/cas
   project:
     url: http://127.0.0.1:8081
 ```
 
-> 步骤二： 在`ShiroConfig.loadShiroFilterChain`方法中配置需要使用cas过滤器`securityFilter`拦截的路径即可
+> 步骤二： 在`ShiroConfig.loadShiroFilterChain`方法中配置需要使用cas过滤器`securityFilter`拦截的路径即可 
+
+## easycode代码生成
+> 步骤一：进入IDEA Database透视图，连接需要生成代码的数据库
+
+![markdown](../img/easycode01.png "markdown")   
+
+> 步骤二：选择需要生成的表，选择config table，设置前后端生成参数
+
+![markdown](../img/easycode02.jpg "markdown")
+![markdown](../img/easycode03.jpg "markdown")
+
+> 步骤三：选择需要动态生成的文件与包路径
+>
+![markdown](../img/easycode04.jpg "markdown")    
+
+?> config table参数详解如下：
+
+| 属性 | 用途 | 
+| :-----| :---- |
+| name | 字段名 | 
+| type | 字段类型 |
+| comment | 字段注释 |
+| disable | 冗余，未作判断 |
+| insert | 是否新增 |
+| update | 是否修改 |
+| list | 是否在列表显示 |
+| select | 是否作为查询条件 |
+| selectMode | 后端查询方式 |
+| required | 是否必填 |
+| showType | 字段显示方式 |
+| dictType | 业务字典选择 |
+

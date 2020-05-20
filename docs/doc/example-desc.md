@@ -14,10 +14,10 @@
 
 | 说明 | 接口 | 
 | :-----| :---- | 
-| jwt登录 |  http://127.0.0.1:8090/cloud-user/userInfo/login |  
-| 熔断降级样例 | http://127.0.0.1:8090/cloud-user/userInfo/testHotRule | 
-| 远程调用样例 | http://127.0.0.1:8090/cloud-user/userInfo/notice/listFeign  | 
-| 分布式事务样例 | http://127.0.0.1:8090/cloud-user/userInfo/notice/saveSeata | 
+| jwt登录 |  http://127.0.0.1:8090/cloud-system/userInfo/login |  
+| 熔断降级样例 | http://127.0.0.1:8090/cloud-system/userInfo/testHotRule | 
+| 远程调用样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/listFeign  | 
+| 分布式事务样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/saveSeata | 
 | 读取配置中心样例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
 
 ##  jwt登录
