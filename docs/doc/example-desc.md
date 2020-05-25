@@ -35,18 +35,18 @@
 | 远程调用样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/listFeign  | 
 | 分布式事务样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/saveSeata | 
 | 读取配置中心样例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 流程模型列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
-| 新建流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
-| 编辑流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
-| 删除流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
-| 发布流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
-| 流程实例列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 启动流程实例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |    
-| 删除流程实例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 执行实例列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 查看流程进度 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 任务列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
-| 执行任务 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |    
+| 流程模型列表 | http://127.0.0.1:8060/models |  
+| 新建流程模型 | http://127.0.0.1:8060/models/newModel |  
+| 编辑流程模型 | http://127.0.0.1:8060/models/editor |  
+| 删除流程模型 | http://127.0.0.1:8060/models/{id} |  
+| 发布流程模型 | http://127.0.0.1:8060/models/{id}/deployment |  
+| 流程部署列表 | http://127.0.0.1:8060/deployments |
+| 启动流程实例 | http://127.0.0.1:8060/deployments/{id}/process |    
+| 删除流程实例 | http://127.0.0.1:8060/deployments/{id} |
+| 执行实例列表 | http://127.0.0.1:8060/process/executions |
+| 查看流程进度 | http://127.0.0.1:8060/process/{id}/progress |
+| 任务列表 | http://127.0.0.1:8060/process |
+| 执行任务 | http://127.0.0.1:8060/process/{id}/right |    
 
 ##  jwt登录
 ?> 登录响应token需以X-Token为key存储到请求头中,用于接口认证鉴权。
