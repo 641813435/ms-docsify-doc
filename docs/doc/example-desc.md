@@ -23,7 +23,7 @@
 | 流控降级控制台 |  http://119.96.230.241:8224 | / | 
 | ELK日志管理控制台 |  http://119.96.230.241:8222 | / |
 | 配置中心控制台 |  http://119.96.230.241:8848/nacos/#/login | / |  
-| 调用链监控控制台 |  http://119.96.230.241:8225/zipkin/ | / |    
+| 调用链监控控制台 |  http://119.96.230.241:8223/zipkin/ | / |    
 
 ## 接口清单
 !> 引导样例如下,响应参数规范统一按照TestTableController类；默认网关http://127.0.0.1:8090/
@@ -34,7 +34,19 @@
 | 熔断降级样例 | http://127.0.0.1:8090/cloud-system/userInfo/testHotRule | 
 | 远程调用样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/listFeign  | 
 | 分布式事务样例 | http://127.0.0.1:8090/cloud-system/userInfo/notice/saveSeata | 
-| 读取配置中心样例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 读取配置中心样例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 流程模型列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 新建流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 编辑流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 删除流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 发布流程模型 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |  
+| 流程实例列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 启动流程实例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |    
+| 删除流程实例 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 执行实例列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 查看流程进度 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 任务列表 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |
+| 执行任务 | http://127.0.0.1:8090/cloud-content/notice/testNacosConfig |    
 
 ##  jwt登录
 ?> 登录响应token需以X-Token为key存储到请求头中,用于接口认证鉴权。
