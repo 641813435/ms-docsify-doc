@@ -5,7 +5,7 @@
 - [案例参考](doc/example-desc.md)
 - [FAQ](doc/faq-desc.md)
 - **Links**
-- [源码下载](https://git.code.tencent.com/chende/cloud-alibaba)
+- [源码下载](https://git.code.tencent.com/zzqx-wh/platfrom-cloud)
 - [中间件下载](https://pan.baidu.com/s/1oLdkpeOz8wbCn9fRhaataA)
 - [百度知道](https://www.baidu.com/)
 

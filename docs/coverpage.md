@@ -12,6 +12,6 @@
 - 支持大数据的简单处理
 
 [查看文档](README.md)
-[源码下载](https://git.code.tencent.com/chende/cloud-alibaba)
+[源码下载](https://git.code.tencent.com/zzqx-wh/platfrom-cloud)
 [中间件下载](https://pan.baidu.com/s/1oLdkpeOz8wbCn9fRhaataA)
 
