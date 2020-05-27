@@ -560,8 +560,59 @@ class CXFConfig{
 	}
 }
 ```
-
 ## 工作流开发
+
+> Activiti5.22表前缀说明
+
+| 前缀 | 说明 | 
+| :-----| :---- |
+| ACT_RE  | RE表示Repository资源库，保存流程定义，模型等设计阶段的数据。 |
+| ACT_RU   | RU表示Runtime运行时，保存流程实例，任务，变量等运行阶段的数据。 | 
+| ACT_HI   | 表示History历史，保存历史实例，历史任务等流程历史数据。 | 
+| ACT_ID   | ID表示Identity身份，保存用户，群组，关系等组织机构相关数据 | 
+| ACT_GE   | GE表示General通用，属于一些通用配置。 | 
+| 其他  | ACT_EVT_LOG和ACT_PROCDEF_INFO没有按照规则来，两者分别属于HI和RE。 |  
+
+> Activiti5.22所有表说明
+
+| 表名 | 说明 | 
+| :-----| :---- |
+| act_ge_bytearray | 二进制数据表 | 
+| act_ge_property | 属性数据表存储整个流程引擎级别的数据,初始化表结构时，会默认插入三条记录 |
+| act_hi_actinst | 历史节点表 |
+| act_hi_attachment | 历史附件表 |
+| act_hi_comment | 历史意见表 |
+| act_hi_identitylink | 历史流程人员表 |
+| act_hi_detail | 历史详情表，提供历史变量的查询 |
+| act_hi_procinst | 历史流程实例表 |
+| act_hi_taskinst | 历史任务实例表 |
+| act_hi_varinst | 历史变量表 |
+| act_id_group | 用户组信息表 |
+| act_id_info | 用户扩展信息表 |
+| act_id_membership | 用户与用户组对应信息表 | 
+| act_id_user | 用户信息表 | 
+| act_re_deployment | 部署信息表 | 
+| act_re_model | 流程设计模型部署表 |
+| act_re_procdef | 流程定义数据表 |  
+| act_ru_event_subscr | throwEvent、catchEvent时间监听信息表 |  
+| act_ru_execution | 运行时流程执行实例表 |  
+| act_ru_identitylink | 运行时流程人员表，主要存储任务节点与参与者的相关信息 |  
+| act_ru_job | 运行时定时任务数据表 |  
+| act_ru_task | 运行时任务节点表 |  
+| act_ru_variable | 运行时流程变量数据表 |   
+
+> Activiti5.22所有Service说明
+
+| 服务名称 | 说明 | 
+| :-----| :---- |
+| RepositoryService   | Activiti 中每一个不同版本的业务流程的定义都需要使用一些定义文件，部署文件和支持数据 ( 例如 BPMN2.0 XML 文件，表单定义文件，流程定义图像文件等 )，这些文件都存储在 Activiti 内建的 Repository 中。Repository Service 提供了对 repository 的存取服务。 |
+| RuntimeService     |  Activiti 中，每当一个流程定义被启动一次之后，都会生成一个相应的流程对象实例。Runtime Service 提供了启动流程、查询流程实例、设置获取流程实例变量等功能。此外它还提供了对流程部署，流程定义和流程实例的存取服务。 | 
+| TaskService      |  在 Activiti 中业务流程定义中的每一个执行节点被称为一个 Task，对流程中的数据存取，状态变更等操作均需要在 Task 中完成。Task Service 提供了对用户 Task 和 Form相关的操作。它提供了运行时任务查询、领取、完成、删除以及变量设置等功能。 | 
+| IdentityService     | Activiti 中内置了用户以及组管理的功能，必须使用这些用户和组的信息才能获取到相应的 Task。Identity Service 提供了对 Activiti 系统中的用户和组的管理功能。 | 
+
+?> 使用流程引擎开发路程思路：Activiti5.22流程引擎采用23张表来存储流程节点信息，使用内置Service来实现对流程的自动化管理;使用时首先绘制流程图模型（包括流程节点信息以及审批人等），调用RepositoryService将流程图模型保存到act_re_model与act_ge_bytearray表中，流程图创建完成后，使用RuntimeService来启动流程模型的流程实例（此时会将我们的业务表单标识与流程图进行关联绑定），接下来我们可以使用TaskService来查询属于我们自己的任务并审批，我们也可以使用RepositoryService来对流程图执行状态进行高亮显示。
+
+
 > 步骤一： 启动process-center模块，进入Activiti在线编辑器设计流程
 
 ![markdown](../img/process01.jpg "markdown")   
