@@ -85,15 +85,25 @@
 
 ## 平台架构
 
+<h4>系统物理模型</h4>
+
+![markdown](../img/系统物理模型.jpg "markdown") 
+
+<h4>技术架构模型</h4>
+
+![markdown](../img/技术架构模型.jpg "markdown") 
+
+<h4>微服务高可用设计</h4>
+
+![markdown](../img/微服务高可用设计.jpg "markdown") 
+
+<h4>布局分布图</h4>
+
+![markdown](../img/布局分布图.jpg "markdown") 
+
 <h4>平台接口调用内部时序图</h4>
 
 ![markdown](../img/deploy01.png "markdown") 
-
-!> **任务提示** 此处两张架构图需要调整。
-
-![markdown](../部署01.jpg "markdown")  
-
-![markdown](../部署02.jpg "markdown")
 
 ## 平台环境需求
 | 项目 | 说明 | 
